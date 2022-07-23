@@ -1,0 +1,26 @@
+.post {
+  border-radius: 10px;
+  background: aliceblue;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+
+  .info {
+    width: 100%;
+
+    .avatar {
+      width: 50px;
+      border-radius: 25%;
+      padding-left: 5px;
+      padding-top: 5px;
+      float: left;
+      left: 0;
+    }
+    .info-author {
+      padding-left: 5px;
+      font-weight: bold;
+    }
+  }
+}
+
