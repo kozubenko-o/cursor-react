@@ -1,10 +1,10 @@
 .post {
   border-radius: 10px;
-  background: aliceblue;
   justify-content: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: flex;
+  background-color: #e7eaed;
 
   .info {
     width: 100%;
@@ -17,10 +17,55 @@
       float: left;
       left: 0;
     }
-    .info-author {
-      padding-left: 5px;
-      font-weight: bold;
+    p {
+      margin-top: 8px;
+      .info-author {
+        padding-left: 5px;
+        font-weight: bold;
+        font-family: cursive;
+      }
+      .content-post {
+        padding-left: 10px;
+        font-style: italic;
+        font-stretch: ultra-expanded;
+        font-family: fantasy;
+      }
+    }
+    .photo {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      border-radius: 10px;
+    }
+    .footer-post {
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 0.5rem;
+      .like {
+        background-color: #d0f9e6;
+        border: #adf5eb solid 1px;
+      }
+      .dislike {
+        border: #e3cccc solid 1px;
+        background-color: #efd7dd;
+      }
+      .comment, .share {
+        background-color: #e7eaed;
+        border: none;
+      }
+      button {
+        border-radius: 25px;
+        margin-left: 10%;
+        img {
+          width: 15px;
+        }
+      }
+      label {
+        font-family: Brush Script MT, Brush Script Std, cursive;
+      }
     }
   }
 }
+
 
