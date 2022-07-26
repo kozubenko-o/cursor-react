@@ -8,18 +8,39 @@ import comment from "../../access/img/comment.png"
 import share from "../../access/img/share.png"
 
 function Post() {
-    const [state, setState] = useState(dataPosts);
+    const [posts, setPosts] = useState(dataPosts);
+
     function changeAttr(postId, likeOrDislike) {
-        console.log('click');
-        setState(
-            state.map(p =>
-                p.id === postId ?
-                    {...p, likeOrDislike: p[likeOrDislike]++} :
-                    p
-            )
-        );
+
+        const currentPostIndex = posts.findIndex((item) => item.id === postId);
+
+        if (posts[currentPostIndex]['verdict'] != null) {
+            if (posts[currentPostIndex]['verdict']) {
+                posts[currentPostIndex] = {
+                    ...posts[currentPostIndex],
+                    like: posts[currentPostIndex]['like'] - 1,
+                    ['verdict']: null,
+                };
+            } else {
+                posts[currentPostIndex] = {
+                    ...posts[currentPostIndex],
+                    dislike: posts[currentPostIndex]['dislike'] - 1,
+                    ['verdict']: null,
+                };
+            }
+        } else {
+            const changeVerdict = likeOrDislike === 'like';
+            posts[currentPostIndex] = {
+                ...posts[currentPostIndex],
+                [likeOrDislike]: posts[currentPostIndex][likeOrDislike] + 1,
+                ['verdict']: changeVerdict,
+            };
+        }
+
+        setPosts([...posts]);
     }
-    const data = dataPosts.map(el => {
+
+    return posts.map(el => {
         return (<div className={stylePost.post} key={el.id}>
                 <div className={stylePost.info}>
                     <img className={stylePost.avatar} src={author.avatar}/>
@@ -33,13 +54,13 @@ function Post() {
                     <img className={stylePost.photo} src={el.photo}/>
                     <p className={stylePost['footer-post']}>
                         <span>
-                            <button className={stylePost["like"]} onClick={() => changeAttr(el.id, 'like')}>
+                            <button className={el.verdict ? stylePost["like-true"] : stylePost["like"]} onClick={() => changeAttr(el.id, 'like')}>
                                 <img src={like}/>
                             </button>
                             <label>{el.like}</label>
                         </span>
                         <span>
-                            <button className={stylePost["dislike"]} onClick={() => changeAttr(el.id, 'dislike')}>
+                            <button className={el.verdict != null && !el.verdict ? stylePost["dislike-true"] : stylePost["dislike"]} onClick={() => changeAttr(el.id, 'dislike')}>
                                 <img src={dislike}/>
                             </button>
                             <label>{el.dislike}</label>
@@ -61,7 +82,6 @@ function Post() {
 
         );
     });
-    return data;
 
 }
 

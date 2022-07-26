@@ -46,9 +46,17 @@
         background-color: #d0f9e6;
         border: #adf5eb solid 1px;
       }
+      .like-true {
+        background-color: #3ecf8b;
+        border: #adf5eb solid 1px;
+      }
       .dislike {
         border: #e3cccc solid 1px;
         background-color: #efd7dd;
+      }
+      .dislike-true {
+        border: #e3cccc solid 1px;
+        background-color: #d17088;
       }
       .comment, .share {
         background-color: #e7eaed;

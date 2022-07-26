@@ -3,16 +3,18 @@
     "id": 1,
     "content": "I'll be back...",
     "photo": "https://img.rl0.ru/afisha/e904x508p29x0f1830x1046q85i/s2.afisha.ru/mediastorage/56/42/295b1499126e445daccf33b14256.jpg",
-    "like": 250,
-    "dislike": 12,
-    "comment": 950
+    "like": 256,
+    "dislike": 16,
+    "comment": 1028,
+    "verdict": null
   },
   {
     "id": 2,
-    "content": "I'll be back...",
-    "photo": "https://img.rl0.ru/afisha/e904x508p29x0f1830x1046q85i/s2.afisha.ru/mediastorage/56/42/295b1499126e445daccf33b14256.jpg",
-    "like": 250,
-    "dislike": 12,
-    "comment": 950
+    "content": "I've got to get my rifle from the shed",
+    "photo": "https://ic.pics.livejournal.com/dubikvit/65747770/8083875/8083875_900.jpg",
+    "like": 1028,
+    "dislike": 8,
+    "comment": 2056,
+    "verdict": null
   }
 ]
